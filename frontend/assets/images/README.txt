@@ -1,0 +1,1 @@
+logo.png is the ZOTAANG logo supplied for this project. Add shop/repair/product photos here as you build Version 2.
