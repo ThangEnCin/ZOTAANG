@@ -177,9 +177,9 @@
     </h1>
 
     <p>
-      Quality refurbished devices may be available in different
-      models, storage capacities and condition grades. Contact
-      ZOTAANG to check our current stock and pricing.
+      Quality refurbished phones may be available in different
+      models, storage capacities and condition grades.
+      Contact ZOTAANG to check our current stock and pricing.
     </p>
 
   </div>
@@ -213,7 +213,7 @@
 
         <a
           class="card-link"
-          href="contact.html#quote"
+          href="#refurbished-enquiry"
         >
           Ask about stock →
         </a>
@@ -236,7 +236,7 @@
 
         <a
           class="card-link"
-          href="contact.html#quote"
+          href="#refurbished-enquiry"
         >
           Ask about stock →
         </a>
@@ -259,12 +259,13 @@
 
         <a
           class="card-link"
-          href="contact.html#quote"
+          href="#refurbished-enquiry"
         >
           Ask about stock →
         </a>
 
       </article>
+
 
     </div>
 
@@ -292,9 +293,8 @@
       </h2>
 
       <p>
-        Stock changes regularly, so contact us with the model
-        you're looking for and we'll let you know what is
-        currently available.
+        Stock changes regularly, so tell us what you are looking
+        for and we'll check our current refurbished options.
       </p>
 
     </div>
@@ -310,8 +310,8 @@
         </h3>
 
         <p>
-          Tell us the phone model, storage capacity or budget
-          you're looking for.
+          Tell us the phone model, storage capacity, condition
+          preference or budget you're looking for.
         </p>
 
       </article>
@@ -343,27 +343,356 @@
 
       </article>
 
+
     </div>
 
+  </div>
 
-    <!-- CTA -->
+</section>
 
-    <div class="section-cta">
+
+<!-- ===============================
+     REFURBISHED ENQUIRY FORM
+================================ -->
+
+<section
+  class="section"
+  id="refurbished-enquiry"
+>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        REFURBISHED ENQUIRY
+      </span>
 
       <h2>
-        Looking for a specific device?
+        Find Your <span>Refurbished Phone</span>
       </h2>
 
       <p>
-        Contact ZOTAANG and ask about our current refurbished stock.
+        Tell us what you're looking for and we'll check our
+        current stock and availability.
       </p>
 
-      <a
-        class="btn btn-red"
-        href="contact.html#quote"
+    </div>
+
+
+    <div class="quote-box">
+
+      <form
+        id="refurbishedForm"
+        action="https://formspree.io/f/mrpeplkb"
+        method="POST"
       >
-        Ask About Refurbished Stock
-      </a>
+
+        <!-- Identify this enquiry in Formspree -->
+
+        <input
+          type="hidden"
+          name="enquiry_type"
+          value="Refurbished Phone Enquiry"
+        >
+
+
+        <div class="form-grid">
+
+
+          <!-- NAME -->
+
+          <div class="form-group">
+
+            <label for="refurbishedName">
+              Your name
+            </label>
+
+            <input
+              id="refurbishedName"
+              name="name"
+              required
+            >
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="form-group">
+
+            <label for="refurbishedPhone">
+              Phone number
+            </label>
+
+            <input
+              id="refurbishedPhone"
+              name="phone"
+              type="tel"
+              required
+            >
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="refurbishedEmail">
+              Email address <span>(optional)</span>
+            </label>
+
+            <input
+              id="refurbishedEmail"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+            >
+
+          </div>
+
+
+          <!-- BRAND -->
+
+          <div class="form-group">
+
+            <label for="refurbishedBrand">
+              Brand
+            </label>
+
+            <select
+              id="refurbishedBrand"
+              name="brand"
+              required
+            >
+
+              <option value="">
+                Select
+              </option>
+
+              <option>
+                iPhone
+              </option>
+
+              <option>
+                Samsung
+              </option>
+
+              <option>
+                Google Pixel
+              </option>
+
+              <option>
+                Xiaomi
+              </option>
+
+              <option>
+                Huawei
+              </option>
+
+              <option>
+                OnePlus
+              </option>
+
+              <option>
+                Motorola
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- OTHER BRAND -->
+
+          <div
+            class="form-group"
+            id="refurbishedBrandGroup"
+            style="display: none;"
+          >
+
+            <label for="refurbishedOtherBrand">
+              Brand name
+            </label>
+
+            <input
+              id="refurbishedOtherBrand"
+              name="other_brand"
+              type="text"
+              placeholder="e.g. Honor"
+            >
+
+          </div>
+
+
+          <!-- MODEL -->
+
+          <div class="form-group">
+
+            <label for="refurbishedModel">
+              Model
+            </label>
+
+            <input
+              id="refurbishedModel"
+              name="model"
+              placeholder="e.g. iPhone 13"
+            >
+
+          </div>
+
+
+          <!-- STORAGE -->
+
+          <div class="form-group">
+
+            <label for="storage">
+              Storage
+            </label>
+
+            <select
+              id="storage"
+              name="storage"
+            >
+
+              <option value="">
+                No preference
+              </option>
+
+              <option>
+                32GB
+              </option>
+
+              <option>
+                64GB
+              </option>
+
+              <option>
+                128GB
+              </option>
+
+              <option>
+                256GB
+              </option>
+
+              <option>
+                512GB
+              </option>
+
+              <option>
+                1TB
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- CONDITION -->
+
+          <div class="form-group">
+
+            <label for="condition">
+              Condition preference
+            </label>
+
+            <select
+              id="condition"
+              name="condition"
+            >
+
+              <option value="">
+                No preference
+              </option>
+
+              <option>
+                Good
+              </option>
+
+              <option>
+                Very Good
+              </option>
+
+              <option>
+                Excellent
+              </option>
+
+              <option>
+                Any condition
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- BUDGET -->
+
+          <div class="form-group">
+
+            <label for="budget">
+              Approximate budget <span>(optional)</span>
+            </label>
+
+            <input
+              id="budget"
+              name="budget"
+              type="text"
+              placeholder="e.g. £200"
+            >
+
+          </div>
+
+
+          <!-- ENQUIRY -->
+
+          <div class="form-group full">
+
+            <label for="refurbishedMessage">
+              What are you looking for?
+            </label>
+
+            <textarea
+              id="refurbishedMessage"
+              name="message"
+              required
+              placeholder="e.g. I'm looking for an iPhone 13 128GB in very good condition."
+            ></textarea>
+
+          </div>
+
+
+          <!-- BUTTON -->
+
+          <div class="form-group full">
+
+            <button
+              class="btn btn-red"
+              type="submit"
+            >
+              Ask About Refurbished Stock
+            </button>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- FORM MESSAGE -->
+
+        <p
+          class="form-message"
+          id="refurbishedFormMessage"
+        ></p>
+
+
+      </form>
 
     </div>
 
@@ -458,6 +787,7 @@
 
     </div>
 
+
   </div>
 
 
@@ -501,6 +831,7 @@
 ================================ -->
 
 <script src="../js/main.js"></script>
+<script src="../js/quote.js"></script>
 
 
 </body>
