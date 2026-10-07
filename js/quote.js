@@ -7,24 +7,23 @@ const brandInput = document.querySelector("#brand");
 const modelInput = document.querySelector("#model");
 
 
-// ===============================
-// Show Brand field when "Other"
-// is selected
-// ===============================
+// ========================================
+// DEVICE / BRAND FIELD
+// ========================================
 
-if (deviceSelect && brandGroup && brandInput) {
+if (deviceSelect && brandGroup && brandInput && modelInput) {
 
   deviceSelect.addEventListener("change", () => {
 
     if (deviceSelect.value === "Other") {
 
       // Show Brand field
-      brandGroup.style.display = "";
+      brandGroup.style.display = "block";
 
-      // Make Brand required
+      // Brand is required when Other is selected
       brandInput.required = true;
 
-      // Change model placeholder
+      // Helpful model example
       modelInput.placeholder = "e.g. P30 Pro";
 
     } else {
@@ -35,11 +34,12 @@ if (deviceSelect && brandGroup && brandInput) {
       // Brand is no longer required
       brandInput.required = false;
 
-      // Clear previous brand
+      // Clear any previous brand
       brandInput.value = "";
 
-      // Normal model placeholder
+      // Restore normal model example
       modelInput.placeholder = "e.g. iPhone 13";
+
     }
 
   });
@@ -47,9 +47,9 @@ if (deviceSelect && brandGroup && brandInput) {
 }
 
 
-// ===============================
-// Quote form submission
-// ===============================
+// ========================================
+// QUOTE FORM SUBMISSION
+// ========================================
 
 if (form) {
 
@@ -57,6 +57,7 @@ if (form) {
 
     event.preventDefault();
 
+    // Show sending message
     message.textContent = "Sending your request...";
 
     try {
@@ -69,32 +70,48 @@ if (form) {
         }
       });
 
+
+      // Check if Formspree accepted the submission
       if (!response.ok) {
         throw new Error("Form submission failed");
       }
 
+
+      // Success message
       message.innerHTML =
         "Thanks for contacting <strong>ZOTAANG!</strong><br>" +
         "We've received your repair enquiry and will contact you shortly.<br>" +
         "📞 <a href=\"tel:02080874744\">020 8087 4744</a> &nbsp; " +
         "📍 <a href=\"https://maps.app.goo.gl/icvLijooE6EjZUCb9\" target=\"_blank\" rel=\"noopener\">Visit ZOTAANG</a>";
 
+
+      // Reset the form
       form.reset();
 
-      // Hide Brand field again after submission
+
+      // Hide Brand field after submission
       if (brandGroup && brandInput) {
+
         brandGroup.style.display = "none";
+
         brandInput.required = false;
+
         brandInput.value = "";
+
       }
+
 
       // Reset model placeholder
       if (modelInput) {
+
         modelInput.placeholder = "e.g. iPhone 13";
+
       }
+
 
     } catch (error) {
 
+      // Error message
       message.textContent =
         "Sorry, something went wrong. Please call 020 8087 4744 or WhatsApp us.";
 
