@@ -20,8 +20,11 @@ if (form) {
         throw new Error("Form submission failed");
       }
 
-      message.textContent =
-        "Thanks! Your quote request has been received. We will contact you shortly.";
+      message.innerHTML =
+        "Thanks for contacting <strong>ZOTAANG!</strong><br>" +
+        "We've received your repair enquiry and will contact you shortly.<br>" +
+        "📞 <a href=\"tel:02080874744\">020 8087 4744</a> &nbsp; " +
+        "📍 <a href=\"https://maps.app.goo.gl/icvLijooE6EjZUCb9\" target=\"_blank\" rel=\"noopener\">Visit ZOTAANG</a>";
 
       form.reset();
 
