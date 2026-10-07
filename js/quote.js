@@ -5,25 +5,29 @@ if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const data = Object.fromEntries(new FormData(form).entries());
     message.textContent = "Sending your request...";
 
     try {
-      const response = await fetch("http://localhost:3000/api/quotes", {
+      const response = await fetch(form.action, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
       });
 
-      const result = await response.json();
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
 
-      if (!response.ok) throw new Error(result.message || "Request failed");
+      message.textContent =
+        "Thanks! Your quote request has been received. We will contact you shortly.";
 
-      message.textContent = "Thanks! Your quote request has been received.";
       form.reset();
+
     } catch (error) {
       message.textContent =
-        "The online form is not connected yet. Please call 020 8087 4744 or WhatsApp us.";
+        "Sorry, something went wrong. Please call 020 8087 4744 or WhatsApp us.";
     }
   });
 }
