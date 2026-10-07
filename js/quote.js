@@ -1,5 +1,17 @@
-const form = document.querySelector("#quoteForm");
-const message = document.querySelector("#formMessage");
+// =====================================================
+// ZOTAANG FORM HANDLER
+// Supports:
+// 1. Repair Quote Form
+// 2. Refurbished Phone Enquiry Form
+// =====================================================
+
+
+// =====================================================
+// REPAIR QUOTE FORM
+// =====================================================
+
+const repairForm = document.querySelector("#quoteForm");
+const repairMessage = document.querySelector("#formMessage");
 
 const deviceSelect = document.querySelector("#device");
 const brandGroup = document.querySelector("#brandGroup");
@@ -7,9 +19,9 @@ const brandInput = document.querySelector("#brand");
 const modelInput = document.querySelector("#model");
 
 
-// ========================================
-// DEVICE / BRAND FIELD
-// ========================================
+// -----------------------------------------------------
+// Repair form: Show Brand field when "Other" is selected
+// -----------------------------------------------------
 
 if (deviceSelect && brandGroup && brandInput && modelInput) {
 
@@ -20,7 +32,7 @@ if (deviceSelect && brandGroup && brandInput && modelInput) {
       // Show Brand field
       brandGroup.style.display = "block";
 
-      // Brand is required when Other is selected
+      // Brand becomes required
       brandInput.required = true;
 
       // Helpful model example
@@ -31,10 +43,10 @@ if (deviceSelect && brandGroup && brandInput && modelInput) {
       // Hide Brand field
       brandGroup.style.display = "none";
 
-      // Brand is no longer required
+      // Brand no longer required
       brandInput.required = false;
 
-      // Clear any previous brand
+      // Clear previous brand
       brandInput.value = "";
 
       // Restore normal model example
@@ -47,49 +59,46 @@ if (deviceSelect && brandGroup && brandInput && modelInput) {
 }
 
 
-// ========================================
-// QUOTE FORM SUBMISSION
-// ========================================
+// -----------------------------------------------------
+// Repair form submission
+// -----------------------------------------------------
 
-if (form) {
+if (repairForm && repairMessage) {
 
-  form.addEventListener("submit", async (event) => {
+  repairForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    // Show sending message
-    message.textContent = "Sending your request...";
+    repairMessage.textContent = "Sending your request...";
 
     try {
 
-      const response = await fetch(form.action, {
+      const response = await fetch(repairForm.action, {
         method: "POST",
-        body: new FormData(form),
+        body: new FormData(repairForm),
         headers: {
           Accept: "application/json"
         }
       });
 
 
-      // Check if Formspree accepted the submission
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        throw new Error("Repair form submission failed");
       }
 
 
-      // Success message
-      message.innerHTML =
+      repairMessage.innerHTML =
         "Thanks for contacting <strong>ZOTAANG!</strong><br>" +
         "We've received your repair enquiry and will contact you shortly.<br>" +
         "📞 <a href=\"tel:02080874744\">020 8087 4744</a> &nbsp; " +
         "📍 <a href=\"https://maps.app.goo.gl/icvLijooE6EjZUCb9\" target=\"_blank\" rel=\"noopener\">Visit ZOTAANG</a>";
 
 
-      // Reset the form
-      form.reset();
+      // Reset form
+      repairForm.reset();
 
 
-      // Hide Brand field after submission
+      // Hide Brand field
       if (brandGroup && brandInput) {
 
         brandGroup.style.display = "none";
@@ -108,11 +117,146 @@ if (form) {
 
       }
 
+    } catch (error) {
+
+      repairMessage.textContent =
+        "Sorry, something went wrong. Please call 020 8087 4744 or WhatsApp us.";
+
+    }
+
+  });
+
+}
+
+
+// =====================================================
+// REFURBISHED PHONE ENQUIRY FORM
+// =====================================================
+
+const refurbishedForm =
+  document.querySelector("#refurbishedForm");
+
+const refurbishedMessage =
+  document.querySelector("#refurbishedFormMessage");
+
+const refurbishedBrand =
+  document.querySelector("#refurbishedBrand");
+
+const refurbishedBrandGroup =
+  document.querySelector("#refurbishedBrandGroup");
+
+const refurbishedOtherBrand =
+  document.querySelector("#refurbishedOtherBrand");
+
+
+// -----------------------------------------------------
+// Refurbished form: Show Other Brand field
+// -----------------------------------------------------
+
+if (
+  refurbishedBrand &&
+  refurbishedBrandGroup &&
+  refurbishedOtherBrand
+) {
+
+  refurbishedBrand.addEventListener("change", () => {
+
+    if (refurbishedBrand.value === "Other") {
+
+      // Show manual brand field
+      refurbishedBrandGroup.style.display = "block";
+
+      // Make it required
+      refurbishedOtherBrand.required = true;
+
+    } else {
+
+      // Hide manual brand field
+      refurbishedBrandGroup.style.display = "none";
+
+      // No longer required
+      refurbishedOtherBrand.required = false;
+
+      // Clear previous value
+      refurbishedOtherBrand.value = "";
+
+    }
+
+  });
+
+}
+
+
+// -----------------------------------------------------
+// Refurbished form submission
+// -----------------------------------------------------
+
+if (refurbishedForm && refurbishedMessage) {
+
+  refurbishedForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    refurbishedMessage.textContent =
+      "Sending your enquiry...";
+
+
+    try {
+
+      const response = await fetch(
+        refurbishedForm.action,
+        {
+          method: "POST",
+          body: new FormData(refurbishedForm),
+          headers: {
+            Accept: "application/json"
+          }
+        }
+      );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          "Refurbished enquiry submission failed"
+        );
+
+      }
+
+
+      // Success message
+
+      refurbishedMessage.innerHTML =
+        "Thanks for contacting <strong>ZOTAANG!</strong><br>" +
+        "We've received your refurbished phone enquiry and will check our current stock.<br>" +
+        "📞 <a href=\"tel:02080874744\">020 8087 4744</a> &nbsp; " +
+        "📍 <a href=\"https://maps.app.goo.gl/icvLijooE6EjZUCb9\" target=\"_blank\" rel=\"noopener\">Visit ZOTAANG</a>";
+
+
+      // Reset form
+
+      refurbishedForm.reset();
+
+
+      // Hide Other Brand field
+
+      if (
+        refurbishedBrandGroup &&
+        refurbishedOtherBrand
+      ) {
+
+        refurbishedBrandGroup.style.display = "none";
+
+        refurbishedOtherBrand.required = false;
+
+        refurbishedOtherBrand.value = "";
+
+      }
+
 
     } catch (error) {
 
-      // Error message
-      message.textContent =
+      refurbishedMessage.textContent =
         "Sorry, something went wrong. Please call 020 8087 4744 or WhatsApp us.";
 
     }
