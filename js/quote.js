@@ -2,59 +2,44 @@ const form = document.querySelector("#quoteForm");
 const message = document.querySelector("#formMessage");
 
 const deviceSelect = document.querySelector("#device");
+const brandGroup = document.querySelector("#brandGroup");
+const brandInput = document.querySelector("#brand");
 const modelInput = document.querySelector("#model");
-const modelLabel = document.querySelector("#modelLabel");
 
 
 // ===============================
-// Device / Model field
+// Show Brand field when "Other"
+// is selected
 // ===============================
 
-if (deviceSelect && modelInput && modelLabel) {
+if (deviceSelect && brandGroup && brandInput) {
 
   deviceSelect.addEventListener("change", () => {
 
-    switch (deviceSelect.value) {
+    if (deviceSelect.value === "Other") {
 
-      case "iPhone":
-        modelLabel.textContent = "Model";
-        modelInput.placeholder = "e.g. iPhone 13";
-        break;
+      // Show Brand field
+      brandGroup.style.display = "";
 
-      case "Samsung":
-        modelLabel.textContent = "Model";
-        modelInput.placeholder = "e.g. Galaxy S23";
-        break;
+      // Make Brand required
+      brandInput.required = true;
 
-      case "Google Pixel":
-        modelLabel.textContent = "Model";
-        modelInput.placeholder = "e.g. Pixel 8";
-        break;
+      // Change model placeholder
+      modelInput.placeholder = "e.g. P30 Pro";
 
-      case "MacBook":
-        modelLabel.textContent = "Model";
-        modelInput.placeholder = "e.g. MacBook Air M2";
-        break;
+    } else {
 
-      case "Windows Laptop":
-        modelLabel.textContent = "Brand & Model";
-        modelInput.placeholder = "e.g. HP EliteBook 840 G8";
-        break;
+      // Hide Brand field
+      brandGroup.style.display = "none";
 
-      case "Tablet":
-        modelLabel.textContent = "Brand & Model";
-        modelInput.placeholder = "e.g. iPad 10th Gen, Galaxy Tab S9";
-        break;
+      // Brand is no longer required
+      brandInput.required = false;
 
-      case "Other":
-        modelLabel.textContent = "Brand & Model";
-        modelInput.placeholder =
-          "e.g. OnePlus 12, Huawei P30, Motorola G54";
-        break;
+      // Clear previous brand
+      brandInput.value = "";
 
-      default:
-        modelLabel.textContent = "Model";
-        modelInput.placeholder = "e.g. iPhone 13";
+      // Normal model placeholder
+      modelInput.placeholder = "e.g. iPhone 13";
     }
 
   });
@@ -96,9 +81,15 @@ if (form) {
 
       form.reset();
 
-      // Reset Model field after form submission
-      if (modelLabel && modelInput) {
-        modelLabel.textContent = "Model";
+      // Hide Brand field again after submission
+      if (brandGroup && brandInput) {
+        brandGroup.style.display = "none";
+        brandInput.required = false;
+        brandInput.value = "";
+      }
+
+      // Reset model placeholder
+      if (modelInput) {
         modelInput.placeholder = "e.g. iPhone 13";
       }
 
