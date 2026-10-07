@@ -26,9 +26,7 @@
 
 </head>
 
-
 <body>
-
 
 <!-- ===============================
      TOP BAR
@@ -62,7 +60,6 @@
   </div>
 
 </div>
-
 
 
 <!-- ===============================
@@ -147,7 +144,6 @@
 </header>
 
 
-
 <!-- ===============================
      MAIN
 ================================ -->
@@ -181,7 +177,6 @@
 </section>
 
 
-
 <!-- ===============================
      QUOTE FORM
 ================================ -->
@@ -195,18 +190,18 @@
 
     <div class="quote-box">
 
-
       <form
         id="quoteForm"
         action="https://formspree.io/f/mrpeplkb"
         method="POST"
       >
 
-
         <div class="form-grid">
 
 
-          <!-- NAME -->
+          <!-- ===============================
+               NAME
+          ================================= -->
 
           <div class="form-group">
 
@@ -217,14 +212,16 @@
             <input
               id="name"
               name="name"
+              type="text"
               required
             >
 
           </div>
 
 
-
-          <!-- PHONE -->
+          <!-- ===============================
+               PHONE
+          ================================= -->
 
           <div class="form-group">
 
@@ -242,8 +239,9 @@
           </div>
 
 
-
-          <!-- EMAIL -->
+          <!-- ===============================
+               EMAIL
+          ================================= -->
 
           <div class="form-group">
 
@@ -261,8 +259,9 @@
           </div>
 
 
-
-          <!-- DEVICE -->
+          <!-- ===============================
+               DEVICE
+          ================================= -->
 
           <div class="form-group">
 
@@ -313,29 +312,54 @@
           </div>
 
 
+          <!-- ===============================
+               BRAND
+               Hidden until "Other" is selected
+          ================================= -->
 
-          <!-- MODEL / BRAND -->
+          <div
+            class="form-group"
+            id="brandGroup"
+            style="display: none;"
+          >
+
+            <label for="brand">
+              Brand
+            </label>
+
+            <input
+              id="brand"
+              name="brand"
+              type="text"
+              placeholder="e.g. Huawei"
+            >
+
+          </div>
+
+
+          <!-- ===============================
+               MODEL
+          ================================= -->
 
           <div class="form-group">
 
-            <label
-              for="model"
-              id="modelLabel"
-            >
+            <label for="model">
               Model
             </label>
 
             <input
               id="model"
               name="model"
+              type="text"
               placeholder="e.g. iPhone 13"
             >
 
           </div>
 
 
-
-          <!-- PROBLEM -->
+          <!-- ===============================
+               PROBLEM
+          ================================= -->
 
           <div class="form-group full">
 
@@ -353,8 +377,9 @@
           </div>
 
 
-
-          <!-- SUBMIT -->
+          <!-- ===============================
+               SUBMIT
+          ================================= -->
 
           <div class="form-group full">
 
@@ -367,27 +392,25 @@
 
           </div>
 
-
         </div>
 
 
-        <!-- FORM MESSAGE -->
+        <!-- ===============================
+             FORM MESSAGE
+        ================================= -->
 
         <p
           class="form-message"
           id="formMessage"
         ></p>
 
-
       </form>
-
 
     </div>
 
   </div>
 
 </section>
-
 
 
 <!-- ===============================
@@ -437,7 +460,6 @@
     </article>
 
 
-
     <!-- EMAIL -->
 
     <article class="info-card">
@@ -455,7 +477,6 @@
       </p>
 
     </article>
-
 
 
     <!-- PHONE -->
@@ -477,7 +498,6 @@
     </article>
 
 
-
     <!-- WHATSAPP -->
 
     <article class="info-card">
@@ -496,14 +516,11 @@
 
     </article>
 
-
   </div>
 
 </section>
 
-
 </main>
-
 
 
 <!-- ===============================
@@ -573,7 +590,6 @@
 
     </div>
 
-
   </div>
 
 
@@ -585,7 +601,6 @@
   </div>
 
 </footer>
-
 
 
 <!-- ===============================
@@ -611,7 +626,6 @@
   </a>
 
 </div>
-
 
 
 <!-- ===============================
