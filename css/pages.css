@@ -72,7 +72,9 @@
 
   width: 100%;
 }
-
+#quote + .section-light .content-grid {
+  align-items: start;
+}
 
 /* =====================================================
    INFORMATION CARDS
