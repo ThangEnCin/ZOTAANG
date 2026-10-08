@@ -80,17 +80,13 @@
 
 .info-card {
   background: #ffffff;
-
   border: 1px solid var(--line);
-
   border-radius: 16px;
-
   padding: 25px;
-
   box-shadow:
     0 7px 20px rgba(0, 35, 95, 0.06);
-
   min-width: 0;
+  height: fit-content;
 }
 
 
