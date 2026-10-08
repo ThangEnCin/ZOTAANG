@@ -1,5 +1,7 @@
 /* =====================================================
    ZOTAANG - INNER PAGES CSS
+   =====================================================
+
    Used by:
    - Phone Repairs
    - Laptop Repairs
@@ -7,6 +9,7 @@
    - Refurbished
    - About
    - Contact
+
 ===================================================== */
 
 
@@ -24,6 +27,7 @@
 
 .inner-hero {
   padding: 70px 0;
+
   background: linear-gradient(
     135deg,
     var(--blue-light),
@@ -31,49 +35,71 @@
   );
 }
 
+
 .inner-hero h1 {
   font-size: clamp(38px, 6vw, 60px);
   margin: 12px 0;
 }
 
+
 .inner-hero h1 span {
   color: var(--red);
 }
 
+
 .inner-hero p {
   max-width: 720px;
+
   color: var(--muted);
+
   font-size: 18px;
+
+  line-height: 1.6;
 }
 
 
 /* =====================================================
-   CONTENT GRID
-   Used for contact/info cards
+   CONTACT / INFORMATION CARD GRID
 ===================================================== */
 
 .content-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
   gap: 14px;
+
+  width: 100%;
 }
 
 
 /* =====================================================
-   INFO CARDS
+   INFORMATION CARDS
 ===================================================== */
 
 .info-card {
   background: #ffffff;
+
   border: 1px solid var(--line);
+
   border-radius: 16px;
+
   padding: 25px;
-  box-shadow: 0 7px 20px rgba(0, 35, 95, 0.06);
+
+  box-shadow:
+    0 7px 20px rgba(0, 35, 95, 0.06);
+
+  min-width: 0;
 }
+
 
 .info-card h3 {
   color: var(--blue);
+
+  margin-top: 0;
 }
+
 
 .info-card li {
   margin: 7px 0;
@@ -86,21 +112,30 @@
 
 .price-table {
   width: 100%;
+
   border-collapse: collapse;
+
   background: #ffffff;
 }
+
 
 .price-table th,
 .price-table td {
   padding: 14px;
-  border-bottom: 1px solid var(--line);
+
+  border-bottom:
+    1px solid var(--line);
+
   text-align: left;
 }
 
+
 .price-table th {
   background: var(--blue);
+
   color: #ffffff;
 }
+
 
 .price-table tr:nth-child(even) {
   background: #f7faff;
@@ -113,12 +148,20 @@
 
 .quote-box {
   max-width: 720px;
+
   margin: 0 auto;
+
   padding: 30px;
+
   border-radius: 18px;
+
   background: #ffffff;
-  box-shadow: var(--shadow);
+
   border: 1px solid var(--line);
+
+  box-shadow: var(--shadow);
+
+  box-sizing: border-box;
 }
 
 
@@ -128,7 +171,10 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 15px;
 }
 
@@ -139,8 +185,12 @@
 
 .form-group {
   display: grid;
+
   gap: 7px;
+
+  min-width: 0;
 }
+
 
 .form-group.full {
   grid-column: 1 / -1;
@@ -153,7 +203,9 @@
 
 .form-group label {
   font-size: 13px;
+
   font-weight: 800;
+
   color: var(--blue-dark);
 }
 
@@ -166,15 +218,37 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
+
   box-sizing: border-box;
 
   padding: 13px;
 
-  border: 1px solid #cbd5e3;
+  border:
+    1px solid #cbd5e3;
+
   border-radius: 8px;
 
   font: inherit;
+
   background: #ffffff;
+
+  color: #111827;
+}
+
+
+/* =====================================================
+   FORM INPUT FOCUS
+===================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+
+  border-color: var(--blue);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 59, 149, 0.08);
 }
 
 
@@ -184,6 +258,7 @@
 
 .form-group textarea {
   min-height: 130px;
+
   resize: vertical;
 }
 
@@ -194,20 +269,55 @@
 
 .form-message {
   margin-top: 12px;
+
   font-weight: 700;
 }
 
 
 /* =====================================================
+   FORM NOTE
+===================================================== */
+
+.form-note {
+  margin-top: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #333333;
+}
+
+
+/* =====================================================
+   DESKTOP
+   901px and above
+
+   Contact cards:
+   4 across
+
+   Quote form:
+   2 columns
+===================================================== */
+
+
+/* No media query needed here.
+   Desktop uses the default styles above. */
+
+
+/* =====================================================
    TABLET
-   901px and above = desktop
-   801px - 900px = 2 columns
+   901px and below
+
+   Contact cards:
+   2 × 2
 ===================================================== */
 
 @media (max-width: 900px) {
 
   .content-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
@@ -216,19 +326,33 @@
 /* =====================================================
    MOBILE
    800px and below
+
+   Contact cards:
+   1 column
+
+   Quote form:
+   1 column
 ===================================================== */
 
 @media (max-width: 800px) {
 
-  /* Contact cards */
+  /* ---------------------------------------------
+     CONTACT CARDS
+  --------------------------------------------- */
+
   .content-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Quote form */
+
+  /* ---------------------------------------------
+     QUOTE FORM
+  --------------------------------------------- */
+
   .form-grid {
     grid-template-columns: 1fr;
   }
+
 
   .form-group.full {
     grid-column: auto;
@@ -244,35 +368,48 @@
 
 @media (max-width: 640px) {
 
-  /* Hero */
+  /* ---------------------------------------------
+     INNER HERO
+  --------------------------------------------- */
 
   .inner-hero {
     padding: 48px 0 42px;
   }
 
+
   .inner-hero h1 {
     font-size: 40px;
+
     line-height: 1.05;
   }
 
+
   .inner-hero p {
     font-size: 16px;
+
+    line-height: 1.55;
   }
 
 
-  /* Quote box */
+  /* ---------------------------------------------
+     QUOTE BOX
+  --------------------------------------------- */
 
   .quote-box {
     padding: 22px 18px;
+
     border-radius: 15px;
   }
 
 
-  /* Pricing table */
+  /* ---------------------------------------------
+     PRICING TABLE
+  --------------------------------------------- */
 
   .price-table {
     font-size: 13px;
   }
+
 
   .price-table th,
   .price-table td {
@@ -280,7 +417,9 @@
   }
 
 
-  /* Contact cards */
+  /* ---------------------------------------------
+     INFORMATION CARDS
+  --------------------------------------------- */
 
   .info-card {
     padding: 21px;
