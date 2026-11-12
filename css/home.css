@@ -191,3 +191,127 @@
   .laptop-device { width: 165px; height: 110px; }
   .repair-badge { width: 90px; height: 90px; }
 }
+
+
+/* HOMEPAGE SPACING REFINEMENT */
+.section {
+  padding: 52px 0;
+}
+
+.section-heading {
+  margin-bottom: 26px;
+}
+
+.device-grid,
+.service-grid {
+  gap: 14px;
+}
+
+.device-card {
+  padding: 22px 20px;
+}
+
+.device-icon {
+  margin-bottom: 10px;
+  font-size: 34px;
+}
+
+.device-card p {
+  min-height: 0;
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+.service-card {
+  padding: 20px;
+}
+
+.service-card h3 {
+  margin: 8px 0 6px;
+}
+
+.parts-section {
+  padding: 36px 0;
+}
+
+.parts-card {
+  padding: 26px;
+  gap: 22px;
+}
+
+.parts-card p {
+  margin-bottom: 10px;
+}
+
+.parts-badges {
+  gap: 9px;
+}
+
+.parts-badge {
+  padding: 12px;
+}
+
+.cta-section {
+  padding: 36px 0;
+}
+
+.site-footer {
+  padding-top: 38px;
+}
+
+.footer-grid {
+  padding-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 38px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .device-grid,
+  .service-grid {
+    gap: 12px;
+  }
+
+  .device-card {
+    padding: 19px 17px;
+  }
+
+  .service-card {
+    padding: 18px;
+  }
+
+  .parts-section {
+    padding: 28px 0;
+  }
+
+  .parts-card {
+    padding: 19px;
+    gap: 16px;
+  }
+
+  .parts-badges {
+    gap: 8px;
+  }
+
+  .parts-badge {
+    padding: 10px;
+  }
+
+  .cta-section {
+    padding: 30px 0;
+  }
+
+  .site-footer {
+    padding-top: 30px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+    padding-bottom: 22px;
+  }
+}
