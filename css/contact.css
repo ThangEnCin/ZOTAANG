@@ -1,0 +1,96 @@
+/* ZOTAANG CONTACT PAGE — balanced two-column layout */
+.contact-page #quote { padding: 42px 0 64px; }
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(290px, .85fr);
+  gap: 28px;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.contact-form-column { min-width: 0; }
+.contact-layout .quote-box {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 26px;
+}
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  min-width: 0;
+}
+.contact-details h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: 25px;
+}
+.contact-details-intro {
+  margin: -5px 0 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.contact-details .info-card {
+  padding: 17px 18px;
+  margin: 0;
+}
+.contact-details .info-card h3 {
+  margin: 0 0 7px;
+  color: var(--blue);
+  font-size: 17px;
+}
+.contact-details .info-card p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.contact-details .info-card a {
+  font-weight: 700;
+  color: var(--blue);
+}
+.contact-extra-services {
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: 10px;
+  background: #fff;
+}
+.contact-extra-services strong { color: var(--blue); }
+.contact-extra-services p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+/* Mobile action bar must never appear as unstyled links on desktop. */
+.contact-page .mobile-actions { display: none; }
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(250px, .9fr);
+    gap: 18px;
+  }
+  .contact-layout .quote-box { padding: 21px; }
+}
+@media (max-width: 760px) {
+  .contact-page #quote { padding: 28px 0 42px; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contact-details h2,
+  .contact-details-intro,
+  .contact-extra-services { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .contact-layout .quote-box { padding: 19px 15px; }
+  .contact-details { grid-template-columns: 1fr; }
+  .contact-details h2,
+  .contact-details-intro,
+  .contact-extra-services { grid-column: auto; }
+}
+/* The shared stylesheet intentionally shows quick actions only on phones. */
+@media (max-width: 640px) {
+  .contact-page .mobile-actions { display: grid; }
+}
