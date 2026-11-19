@@ -1,0 +1,49 @@
+/* ZOTAANG TABLET REPAIRS — page-specific layout */
+.tablet-repairs-page .tablet-brand-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 26px;
+}
+.tablet-repairs-page .tablet-brand-card {
+  min-height: 112px;
+}
+.tablet-repairs-page .tablet-brand-card h3 {
+  color: var(--blue);
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.tablet-repairs-page .tablet-brand-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.tablet-repairs-page .phone-brands-section {
+  padding-top: 48px;
+  padding-bottom: 52px;
+}
+.tablet-repairs-page .phone-services-section {
+  padding-top: 48px;
+  padding-bottom: 52px;
+}
+.tablet-repairs-page .phone-repair-note {
+  margin-top: 22px;
+}
+.tablet-repairs-page .phone-service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .tablet-repairs-page .tablet-brand-grid,
+  .tablet-repairs-page .phone-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .tablet-repairs-page .tablet-brand-grid,
+  .tablet-repairs-page .phone-service-grid {
+    grid-template-columns: 1fr;
+  }
+  .tablet-repairs-page .phone-brands-section,
+  .tablet-repairs-page .phone-services-section {
+    padding-top: 34px;
+    padding-bottom: 38px;
+  }
+}
