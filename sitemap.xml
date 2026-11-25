@@ -1,10 +1,37 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.zotaang.co.uk/</loc></url>
-  <url><loc>https://www.zotaang.co.uk/pages/phone-repairs.html</loc></url>
-  <url><loc>https://www.zotaang.co.uk/pages/laptop-repairs.html</loc></url>
-  <url><loc>https://www.zotaang.co.uk/pages/pricing.html</loc></url>
-  <url><loc>https://www.zotaang.co.uk/pages/refurbished.html</loc></url>
-  <url><loc>https://www.zotaang.co.uk/pages/about.html</loc></url>
-  <url><loc>https://www.zotaang.co.uk/contact/</loc></url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/phone-repairs/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/tablet-repairs/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/laptop-repairs/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/pricing/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/refurbished/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/about/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.zotaang.co.uk/contact/</loc>
+  </url>
+
 </urlset>
